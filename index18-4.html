@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #user_color {
+      }
+      #user_btn {
+      }
+      #resultbox {
+        border: 3px solid crimson;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="user_color" />
+    <button id="user_btn">색상 변경</button>
+    <div id="resultbox"></div>
+
+    <script>
+      // switch case문
+      //   let c;
+      //   c = 15;
+
+      //   sswitch (c) {
+      //     case 5:
+      //       console.log("첫 번째");
+      //       break;
+
+      //     case 10:
+      //       console.log("두 번째");
+      //       break;
+
+      //     case 15:
+      //       console.log("세 번째");
+      //       break;
+
+      //     default:
+      //       console.log("마지막");
+      //   }
+
+      let user_btn = document.getElementById("user_btn");
+      user_btn.addEventListener("click", function () {
+        console.log("버튼 클릭");
+        let user_color = document.getElementById("user_color").value;
+        let resultbox = document.getElementById("resultbox");
+
+        switch (user_color) {
+          case "red":
+            console.log("red!");
+            document.getElementById("resultbox").style.backgroundColor = user_color;
+            break;
+          case "blue":
+            console.log("blue!");
+            document.getElementById("resultbox").style.backgroundColor = user_color;
+            break;
+          case "green":
+            console.log("green!");
+            document.getElementById("resultbox").style.backgroundColor = user_color;
+            break;
+          default:
+            console.log("white!");
+            document.getElementById("resultbox").style.backgroundColor = "white";
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="userId">아이디</label>
+      <input type="text" id="userId" /><br />
+
+      <label for="userPassword">비밀번호</label>
+      <input type="password" id="userPassword" /><br />
+
+      <label for="userConfirm">비밀번호 확인</label>
+      <input type="password" id="userConfirm" /><br />
+
+      <label for="userPhone">폰번호</label>
+      <input type="text" id="userPhone" /><br />
+
+      <label for="userEmail">이메일</label>
+      <input type="email" id="userEmail" /><br />
+
+      <button id="sign_btn">가입하기</button>
+    </form>
+
+    <script>
+      document.getElementById("sign_btn").addEventListener("click", function () {
+        let userid_value = document.getElementById("userId").value;
+        console.log(userid_value);
+
+        // 아이디 체크
+        if (userid_value == "") {
+          console.log("아이디를 입력해주세요");
+          document.getElementById("userId").focus();
+          return;
+        }
+
+        // 비밀번호 체크
+        let userpw_value = document.getElementById("userPassword").value;
+        let userpw_confirm_value = document.getElementById("userConfirm").value;
+        console.log(userpw_value);
+        console.log(userpw_confirm_value);
+        if (userpw_value == "") {
+          console.log("비밀번호를 입력해주세요");
+          document.getElementById("userPassword").focus();
+          return;
+        } else if (userpw_value.length < 8) {
+          console.log("비밀번호를 8자 이상 입력해주세요");
+          return;
+        }
+        if (userpw_value !== userpw_confirm_value) {
+          console.log("두 개의 비밀번호가 다릅니다.");
+          return;
+        }
+
+        // 전화번호 체크
+        let userphone_value = document.getElementById("userPhone").value;
+        console.log(userphone_value);
+        let number = /^[0-9]*$/;
+        if (userphone_value == "") {
+          console.log("전화번호를 입력해주세요");
+          document.getElementById("userPhone").focus();
+          return;
+        } else if (!number.test(userphone_value)) {
+          console.log("전화번호는 숫자만 가능합니다");
+          return;
+        }
+
+        // 이메일 체크
+        var regex = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+        let useremail_value = document.getElementById("userEmail").value;
+        console.log(useremail_value);
+        if (userphone_value == "") {
+          console.log("전화번호를 입력해주세요");
+          document.getElementById("userEmail").focus();
+          return;
+        } else if (!regex.test(useremail_value)) {
+          console.log("전화번호는 숫자만 가능합니다");
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
