@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="toy" />
+    <button id="btn">계산하기</button>
+    <p id="result"></p>
+
+    <script>
+      let user_input = document.getElementById("toy");
+      console.log(user_input);
+
+      let user_input_value = user_input.value;
+      console.log(user_input_value);
+
+      let user_btn = document.getElementById("btn");
+      console.log(user_btn);
+
+      let user_result = document.getElementById("result");
+      console.log(user_result);
+
+      user_btn.addEventListener("click", function () {
+        console.log("버튼 클릭");
+        let user_input_value = user_input.value;
+        console.log(user_input_value);
+
+        let user_input_result = user_input_value * 2;
+        // user_result.textContent = user_input_result;
+        user_result.innerHTML = user_input_result;
+      });
+    </script>
+  </body>
+</html>

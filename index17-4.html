@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #nemo1,
+      #nemo2 {
+        width: 50px;
+        height: 50px;
+        background-color: crimson;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <div id="nemo1">1</div>
+  <div id="nemo2">2</div>
+  <body>
+    <script>
+      let num = 100;
+      let nemo1 = document.getElementById("nemo1");
+      let nemo2 = document.getElementById("nemo2");
+
+      console.log(nemo1);
+      console.log(nemo2);
+
+      //   document.getElementById("nemo1").addEventListener("click", function () {
+      //     console.log(num * 2);
+      //   });
+      //   document.getElementById("nemo2").addEventListener("click", function () {
+      //     console.log(num * 3);
+      //   });
+
+      nemo1.addEventListener("click", nemo1_func);
+      nemo2.addEventListener("click", nemo2_func);
+
+      function nemo1_func() {
+        console.log(num * 4);
+      }
+      function nemo2_func() {
+        console.log(num * 5);
+      }
+
+      let money = 1;
+      console.log(money++);
+      console.log(++money);
+    </script>
+  </body>
+</html>
