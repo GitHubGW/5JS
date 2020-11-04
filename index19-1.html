@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   document.write("하이");
+      //   document.write("<h1>h1</h1>");
+      //   document.write("<h2>h2</h2>");
+      //   document.write("<h3>h3</h3>");
+      //   document.write("<h4>h4</h4>");
+      //   document.write("<h5>h5</h5>");
+
+      //   for (let i = 0; i < 5; i++) {
+      //     document.write("<h1>5번 반복</h1>");
+      //   }
+
+      //   for (let i = 0; i < 5; i++) {
+      //     for (let j = 0; j < 5; j++) {
+      //       //   console.log(i);
+      //       //   console.log(j);
+      //       console.log(i + j);
+      //     }
+      //   }
+
+      // 구구단 만들기 예재
+      //   for (let i = 2; i < 10; i++) {
+      //     for (let j = 1; j < 10; j++) {
+      //       console.log(i * j);
+      //     }
+      //     console.log("=====================");
+      //   }
+
+      //   구구단 만들기 예재2(5단 7단을 제외한 구구단 출력)
+      for (let i = 2; i < 10; i++) {
+        if (i != 5 && i != 7) {
+          for (let j = 1; j < 10; j++) {
+            console.log(i * j);
+          }
+        }
+        console.log("=====================");
+      }
+
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j <= i; j++) {
+          document.write("★");
+        }
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>

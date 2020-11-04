@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let student = [
+        [90, 85, 74, 100],
+        [80, 94, 62, 98, 77],
+      ];
+      //   console.log(student);
+
+      let school = {
+        count: 2,
+        class: [
+          {
+            student: 4,
+            info: [
+              { name: "1번 학생", score: 90 },
+              { name: "2번 학생", score: 85 },
+              { name: "3번 학생", score: 75 },
+              { name: "4번 학생", score: 100 },
+            ],
+          },
+          {
+            student: 5,
+            info: [
+              { name: "5번 학생", score: 80 },
+              { name: "6번 학생", score: 50 },
+              { name: "7번 학생", score: 55 },
+              { name: "8번 학생", score: 65 },
+              { name: "9번 학생", score: 95 },
+            ],
+          },
+        ],
+      };
+      //   console.log(school);
+      //   console.log(school.count);
+      //   console.log(school.class);
+      //   console.log(sschool.class[0]);
+      //   console.log(school.class[1]);
+      //   console.log(school.class[0].info.length);
+      //   console.log(school.class[1].info.length);
+
+      //   console.log(school.class[0].student);
+      //   console.log(school.class[0].info);
+      //   console.log(school.class[0].info[0]);
+      //   console.log(school.class[0].info[1]);
+      //   console.log(school.class[0].info[1].name);
+      //   console.log(school.class[0].info[0].score);
+      //   console.log(school.class[1].info[4].score);
+
+      //문제1.첫번째와 두번째 학급의 점수 평균값을 구하시오
+      //   let user_avg = [];
+      //   let school_class_score = 0;
+      //   for (let i = 0; i < 2; i++) {
+      //     for (let j = 0; j < school.class[i].info.length; j++) {
+      //       school_class_score += school.class[i].info[j].score;
+      //     }
+      //     user_avg.push(school_class_score / school.class[i].info.length);
+      //   }
+      //   console.log(user_avg);
+      //   console.log("첫 학급 평균:" + user_avg[0]);
+      //   console.log("두 학급 평균:" + user_avg[1]);
+
+      //문제2.전체 학교의 점수 평균값을 구하시오
+      let user_avg = [];
+      let school_class_score = 0;
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < school.class[i].info.length; j++) {
+          school_class_score += school.class[i].info[j].score;
+        }
+        user_avg.push(school_class_score / school.class[i].info.length);
+      }
+      console.log(user_avg);
+      console.log("첫 학급 평균:" + user_avg[0]);
+      console.log("두 학급 평균:" + user_avg[1]);
+    </script>
+  </body>
+</html>
