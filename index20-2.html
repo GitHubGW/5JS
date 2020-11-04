@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sum() {
+        let total = 0;
+        console.log(arguments);
+        console.log(arguments.length);
+
+        for (let i = 0; i < arguments.length; i++) {
+          if (typeof arguments[i] != "string") {
+            total += arguments[i];
+          }
+        }
+        return total;
+      }
+
+      let result1 = sum(50, "문자", 40, 10);
+      let result2 = sum(50, "문자123", 40, 10);
+      let result3 = sum(50, "문자", 10, 10);
+      let result4 = sum(50, "문자", 20, 10);
+      console.log(result1);
+      console.log(result2);
+      console.log(result3);
+      console.log(result4);
+
+      function bank2(account, bankname, banknumber) {
+        return "ok";
+      }
+
+      let bank3 = bank2();
+      console.log(bank3);
+
+      let num = [90, 80, 70, 88];
+
+      function numlist(num) {
+        return num;
+      }
+      let numlist2 = numlist(num);
+      console.log(numlist2);
+
+      bb();
+
+      function bb() {
+        console.log("100");
+      }
+
+      function open() {
+        let toy = 300;
+        let toy2 = 500;
+        console.log(toy);
+        console.log(toy2);
+      }
+      function close() {
+        let toy = 300;
+        let toy2 = 500;
+        console.log(toy);
+        console.log(toy2);
+      }
+
+      open();
+      close();
+
+      for (let j = 0; j < 10; j++) {}
+
+      console.log(j);
+    </script>
+  </body>
+</html>

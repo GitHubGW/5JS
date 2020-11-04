@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      body {
+        background-image: url("images/bg.jpg");
+      }
+      h1 {
+        margin-top: 30px;
+        font-size: 25px;
+        color: white;
+        text-align: center;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 15px;
+        color: white;
+        text-align: center;
+      }
+      .menu {
+        width: 480px;
+        margin: 30px auto 0;
+        overflow: hidden;
+      }
+      .menu li {
+        float: left;
+        background: rgba(255, 255, 255, 0.5);
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .product {
+        width: 250px;
+        height: 170px;
+        background-image: url("images/item.png");
+        margin: 50px auto;
+        transition: all 0.5s ease;
+      }
+      .title {
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        background: rgba(0, 0, 0, 0.5);
+        margin: 0 auto;
+        border-radius: 5px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>APPLE PRODUCT</h1>
+    <h2>Product Select</h2>
+    <ul class="menu">
+      <li id="menu1">iPhone</li>
+      <li id="menu2">iPod</li>
+      <li id="menu3">iPad</li>
+      <li id="menu4">iMac</li>
+    </ul>
+    <div class="product"></div>
+    <div class="title">iPhone</div>
+
+    <script>
+      console.log(document);
+      let menu1 = document.querySelector("#menu1");
+      let menu2 = document.querySelector("#menu2");
+      let menu3 = document.querySelector("#menu3");
+      let menu4 = document.querySelector("#menu4");
+      console.log(menu1);
+      console.log(menu2);
+      console.log(menu3);
+      console.log(menu4);
+
+      // 방법1
+      //   menu1.addEventListener("click", function () {
+      //     document.querySelector(".product").style.backgroundPosition = 0 + "px";
+      //     document.querySelector(".title").innerHTML = "iPhone";
+      //   });
+      //   menu2.addEventListener("click", function () {
+      //     document.querySelector(".product").style.backgroundPosition = -250 + "px";
+      //     document.querySelector(".title").textContent = "iPod";
+      //   });
+      //   menu3.addEventListener("click", function () {
+      //     document.querySelector(".product").style.backgroundPosition = -500 + "px";
+      //     document.querySelector(".title").innerHTML = "iPad";
+      //   });
+      //   menu4.addEventListener("click", function () {
+      //     document.querySelector(".product").style.backgroundPosition = -750 + "px";
+      //     document.querySelector(".title").innerHTML = "iMac";
+      //   });
+
+      // 방법2
+      function product(user_position, user_phone) {
+        document.querySelector(".product").style.backgroundPosition = user_position + "px";
+        document.querySelector(".title").innerHTML = user_phone;
+      }
+      let phone_list = [
+        { position: 0, phone: "iPhone" },
+        { position: -250, phone: "iPod" },
+        { position: -500, phone: "iPad" },
+        { position: -750, phone: "iMac" },
+      ];
+      console.log(phone_list);
+      console.log(phone_list[0].position);
+      console.log(phone_list[0].phone);
+      menu1.addEventListener("click", function () {
+        product(phone_list[0].position, phone_list[0].phone);
+      });
+      menu2.addEventListener("click", function () {
+        product(phone_list[1].position, phone_list[1].phone);
+      });
+      menu3.addEventListener("click", function () {
+        product(phone_list[2].position, phone_list[2].phone);
+      });
+      menu4.addEventListener("click", function () {
+        product(phone_list[3].position, phone_list[3].phone);
+      });
+    </script>
+  </body>
+</html>

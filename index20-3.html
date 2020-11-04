@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let hello = function (a, b) {
+        return a + b;
+      };
+      //   console.log(hello(5, 6));
+
+      let hello2 = (a, b) => {
+        return a + b;
+      };
+      //   console.log(hello2(7, 8));
+
+      /*
+    퀴즈(알고리즘의 기초 문제)
+    두 수가 있는데 두 수 사이에 있는 모든 정수를 더해서 리턴하는 함수를 만든다.
+    ex)3,5 ->3+4+5=12
+
+    a가 첫번째 수, b가 두번째 수인데 두 수가 같은 경우네는 아무 수나 리턴한다.
+    ex)2,2 ->2
+
+    a,b 음수,0,양수중 하나
+    둘의 대소관계는 정해지지 않았다.
+    */
+
+      function myfunc(a, b) {
+        let result = 0;
+        if (a === b) {
+          return a;
+        }
+        // if (a > b) {
+        //   max = a;
+        //   min = b;
+        //   return a;
+        // } else if (b > a) {
+        //   max = b;
+        //   min = a;
+        //   return b;
+        // }
+        if (a != b) {
+          for (let i = a; i <= b; i++) {
+            result = i + result;
+          }
+        }
+        return result;
+      }
+
+      let num = myfunc(2, 5);
+      console.log(num);
+
+      let myfunc2 = (a, b) => {
+        let result2 = 0;
+        for (let i = Math.min(a, b); i <= Math.max(a, b); i++) {
+          result2 = i + result2;
+        }
+        return result2;
+      };
+
+      let num2 = myfunc2(3, 5);
+      console.log(num2);
+    </script>
+  </body>
+</html>

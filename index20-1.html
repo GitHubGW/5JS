@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myapple = function apple() {
+        return;
+        alert("apple함수 실행");
+      };
+      // myapple();
+
+      function apple2() {
+        return 20;
+      }
+
+      let myapple2 = apple2();
+      console.log(myapple2);
+
+      function plus(num1, num2) {
+        return num1 + num2;
+      }
+
+      let user_plus = plus(4, 5);
+      console.log(user_plus);
+
+      let user_plus2 = plus(4);
+      console.log(user_plus2);
+
+      function sum() {
+        console.log(arguments);
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+        console.log(arguments[3]);
+
+        let total = arguments[0] + arguments[1] + arguments[2] + arguments[3];
+
+        return total;
+      }
+
+      let result = sum(20, 30, 40, 50);
+      console.log(result);
+    </script>
+  </body>
+</html>
