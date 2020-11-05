@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grand {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+      }
+      .parent {
+        width: 300px;
+        height: 300px;
+        background-color: blue;
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+      }
+      .child1 {
+        background-color: lightcoral;
+      }
+      .child2 {
+        background-color: lightblue;
+      }
+      .child3 {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grand">
+      <div class="parent">
+        <div class="child child1"></div>
+        <div class="child child2"></div>
+        <div class="child child3"></div>
+      </div>
+    </div>
+    <script>
+      //   let user_parent = document.querySelector(".parent");
+      //   console.log(user_parent);
+
+      //   let user_grand = user_parent.parentElement;
+      //   console.log(user_grand);
+
+      //   let user_grand2 = user_parent.parentNode;
+      //   console.log(user_grand2);
+
+      //   let user_child1 = user_parent.childElementCount;
+      //   console.log(user_child1);
+
+      //   let user_child2 = user_parent.childNodes;
+      //   console.log(user_child2);
+
+      //예재.복잡하게 해당 태그를 찾아서 스타일을 바꿔보기
+      //   let user_child2 = document.querySelector(".child2");
+      //   console.log(user_child2);
+
+      //   let child3 = user_child2.nextElementSibling;
+      //   let child1 = user_child2.previousElementSibling;
+      //   console.log(child3);
+      //   console.log(child1);
+
+      let user_parent2 = document.querySelector(".parent");
+      console.log(user_parent2);
+
+      //   let myfind = user_parent.find("child3");
+      //   console.log(myfind);
+
+      user_parent2.find(".child").css("background", "black");
+    </script>
+  </body>
+</html>
