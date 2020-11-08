@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      img {
+        vertical-align: top;
+      }
+      body {
+        background-image: url("images/bg.png");
+      }
+      h1 {
+        text-align: center;
+        margin: 50px 0;
+      }
+      .sunban {
+        width: 768px;
+        height: 150px;
+        margin: 50px auto 0;
+        background-image: url("images/sunban.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+      }
+      .sunban li {
+        width: 128px;
+        height: 128px;
+        float: left;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .sunban li.hide {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1><img src="images/logo.png" /></h1>
+      <ul class="sunban">
+        <li><img src="images/01.png" /></li>
+        <li><img src="images/02.png" /></li>
+        <li><img src="images/03.png" /></li>
+        <li><img src="images/04.png" /></li>
+        <li><img src="images/05.png" /></li>
+        <li><img src="images/06.png" /></li>
+      </ul>
+      <ul class="sunban">
+        <li><img src="images/07.png" /></li>
+        <li><img src="images/08.png" /></li>
+        <li><img src="images/09.png" /></li>
+        <li><img src="images/10.png" /></li>
+        <li><img src="images/11.png" /></li>
+        <li><img src="images/12.png" /></li>
+      </ul>
+    </div>
+
+    <script>
+      let user_li = document.getElementsByTagName("li");
+      //   console.log(user_li);
+      //   console.log(user_li.length);
+      //   console.log(user_li[0]);
+      //   console.log(user_li[1]);
+      //   console.log(user_li[2]);
+      //   console.log(user_li[3]);
+
+      //   for (let i = 0; i < user_li.length; i++) {
+      //     user_li[i].addEventListener("click", function () {
+      //       this.classList.add("hide");
+      //     });
+      //   }
+
+      for (let j = 0; j < user_li.length; j++) {
+        user_li[j].addEventListener("click", function () {
+          let apple = this.firstElementChild;
+          console.log(apple);
+
+          let num = 1;
+
+          let motion = setInterval(function () {
+            num = num - 0.2;
+            if (num < 0) {
+              clearInterval(motion);
+            }
+            apple.style.opacity = num;
+          }, 100);
+        });
+      }
+    </script>
+  </body>
+</html>

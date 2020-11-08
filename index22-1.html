@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #event {
+        width: 50px;
+        height: 50px;
+        background-color: crimson;
+      }
+      #event.red {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>위, 아래 버튼을 눌러보세요</h1>
+    <div id="event"></div>
+    <input type="text" id="kb"></input>
+
+    <script>
+      // 마우스
+      let event = document.getElementById("event");
+      console.log(event);
+
+      //   event.addEventListener("click", function () {
+      //     // console.log("hi");
+      //     this.classList.toggle("red");
+      //   });
+      function addColor() {
+        this.classList.add("red");
+      }
+
+      function deleteColor() {
+        this.classList.remove("red");
+      }
+
+      //   event.addEventListener("mousedown", addColor);
+      //   event.addEventListener("mouseup", deleteColor);
+
+    //   event.addEventListener("mouseover", addColor);
+    //   event.addEventListener("mouseout", deleteColor);
+
+      //   키보드
+    //   let kb = document.getElementById("kb");
+
+      function board(e) {
+        console.log(e);
+        console.log(e.keyCode);
+
+        if (e.keyCode == 65) {
+          event.classList.add("red");
+        }
+      }
+
+    //   let user_kb=document.getElementById('kb');
+    //   console.log(user_kb);
+
+    //   user_kb.addEventListener('keyup',board);
+    //   document.addEventListener('keyup',board);
+    //   document.addEventListener('keydown',board);
+
+    //   function search(e){
+    //     console.log(e.keyCode);
+    //     if(e.keyCode==13){
+    //         console.log("검색을 시작합니다");
+    //     }
+    //   }
+    //   user_kb.addEventListener('keyup',search);
+    //   user_kb.addEventListener('keypress',search);
+
+
+      //예재-위 방향 버튼을 누르면 오렌지색의 배경이 녹색으로 바뀌고 아래방향버튼을 누르면 다시 오렌지색으로 바뀌게 한다
+      //위버튼은 키코드:38 아래버튼은 키코드:40
+
+        let mykb=document.getElementById('kb');
+        console.log(mykb);
+        function  mykbFunc(e){
+            if(e.keyCode==38){
+                event.classList.add('red');
+            }else if(e.keyCode==40){
+                event.classList.remove('red');
+            }
+        }
+        mykb.addEventListener('keyup',mykbFunc);
+    </script>
+  </body>   
+</html>
