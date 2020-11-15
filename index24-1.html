@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      .silder {
+        width: 700px;
+        height: 450px;
+        margin: 50px auto 10px;
+        border: 5px solid black;
+      }
+      .item {
+        width: 3500px;
+      }
+      .item li {
+        width: 700px;
+        height: 450px;
+        line-height: 450px;
+        color: white;
+        text-align: center;
+        font-size: 100px;
+        font-family: impact;
+        opacity: 0.5;
+        float: left;
+      }
+      .item li:nth-child(1) {
+        background-color: lightblue;
+      }
+      .item li:nth-child(2) {
+        background-color: lightseagreen;
+      }
+      .item li:nth-child(3) {
+        background-color: lightpink;
+      }
+      .item li:nth-child(4) {
+        background-color: lightsalmon;
+      }
+      .item li:nth-child(5) {
+        background-color: lightgreen;
+      }
+      .page {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .page div {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: lightgray;
+      }
+      .page div.active {
+        background-color: black;
+      }
+      .btn {
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="silder">
+      <ul class="item">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+
+    <div class="page">
+      <div class="active"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="btn">
+      <button id="prev">이전</button>
+      <button id="next">다음</button>
+      <button id="play">시작</button>
+      <button id="pause">정지</button>
+    </div>
+
+    <script>
+      let btn_next = document.getElementById("next");
+      console.log(btn_next);
+
+      let user_item = document.querySelector(".item");
+      console.log(user_item);
+      let user_li = user_item.getElementsByTagName("li");
+      console.log(user_li);
+      console.log(user_li.index);
+
+      let dist = 0;
+      btn_next.addEventListener("click", function () {
+        dist = dist - 700;
+        // console.log(dist);
+        user_item.style.transform = "translateX(" + dist + "px)";
+        if (dist < -2800) {
+          user_item.style.transform = "translateX(" + 0 + "px)";
+          dist = 0;
+        }
+      });
+
+      let page = document.querySelector(".page");
+      console.log(page);
+      console.log(page.children);
+      console.log(page.children[0]);
+      console.log(page.children[1]);
+      console.log(page.children[2]);
+
+      let start = null;
+      let i = 0;
+      let btn_play = document.getElementById("play");
+      console.log(btn_play);
+
+      btn_play.addEventListener("click", function () {
+        start = setInterval(function () {
+          i++;
+          page.children[i].classList.add("active");
+          page.children[i - 1].classList.remove("active");
+
+          if (i == 4) {
+            clearInterval(start);
+          }
+        }, 1000);
+      });
+
+      let btn_pause = document.getElementById("pause");
+      console.log(btn_pause);
+      btn_pause.addEventListener("click", function () {
+        clearInterval(start);
+      });
+    </script>
+  </body>
+</html>
