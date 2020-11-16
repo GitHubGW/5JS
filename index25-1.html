@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box" id="box">box</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let num1 = 100;
+        let num2 = 200;
+        console.log(num1);
+        console.log(num2);
+
+        // 클래스 컨트롤
+        // document.querySelector(".box").classList.add("active");
+        // $(".box").addClass("active");
+
+        // 속성 조작
+        // document.getElementById("box").setAttribute("class", "boxhaha");
+        // $("#box").attr("class", "box222");
+
+        // 태그 추가
+        document.getElementById("box").appendChild(li);
+      });
+    </script>
+  </body>
+</html>
